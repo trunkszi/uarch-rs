@@ -1,0 +1,5 @@
+error: multiversion requires an ordinary non-const, non-async Rust function
+ --> tests/ui/fail/multiversion_extern.rs:6:1
+  |
+6 | extern "C" fn bad<A: Arch>(arch: A) {}
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,32 @@
+[package]
+name = "uarch-arch"
+version.workspace = true
+description = "Sealed ISA capabilities and statically dispatched microarchitecture kernels."
+autobenches = false
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+uarch-tiers = { workspace = true }
+uarch-core = { workspace = true }
+
+[dev-dependencies]
+# Checkout-only integration bridges are omitted from published dependency graphs.
+uarch-detect = { path = "../uarch-detect", default-features = false }
+
+[lints]
+workspace = true
+
+[[test]]
+name = "arch_scenario"
+path = "tests/scenario.rs"
+
+[[bench]]
+name = "arch"
+path = "benches/main.rs"
+harness = false

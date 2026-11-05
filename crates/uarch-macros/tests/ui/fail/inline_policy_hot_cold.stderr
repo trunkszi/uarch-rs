@@ -1,0 +1,5 @@
+error: conflicting inline policy attribute
+ --> tests/ui/fail/inline_policy_hot_cold.rs:4:1
+  |
+4 | #[cold]
+  | ^^^^^^^

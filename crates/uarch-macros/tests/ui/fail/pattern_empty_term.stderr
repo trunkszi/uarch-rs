@@ -1,0 +1,5 @@
+error: expected a bit expression
+ --> tests/ui/fail/pattern_empty_term.rs:5:53
+  |
+5 |     let _ = uarch_macros::pattern!(Unknown { READY && BUSY });
+  |                                                     ^

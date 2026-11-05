@@ -1,0 +1,22 @@
+error[E0080]: evaluation panicked: patch must be evaluated at compile time
+ --> tests/ui/fail/pattern_const_patch.rs:6:13
+  |
+6 |     let _ = uarch_macros::patch!(crate = "crate", Word { FIELD: 16 });
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `main::{constant#0}` failed inside this call
+  |
+note: inside `BitPatch::<Word>::with_field`
+ --> tests/ui/fail/support/const_bridge.rs
+  |
+  |     impl<W> BitPatch<W> {
+  |         pub const EMPTY: Self = Self(PhantomData);
+  |         pub const fn with_field(self, _: (), _: u64) -> Self {
+  |             panic!("patch must be evaluated at compile time")
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the failure occurred here
+
+note: erroneous constant encountered
+ --> tests/ui/fail/pattern_const_patch.rs:6:13
+  |
+6 |     let _ = uarch_macros::patch!(crate = "crate", Word { FIELD: 16 });
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this note originates in the macro `uarch_macros::patch` (in Nightly builds, run with -Z macro-backtrace for more info)

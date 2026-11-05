@@ -1,0 +1,5 @@
+error: expected `struct`
+ --> tests/ui/fail/register_pass_union.rs:5:1
+  |
+5 | union Bad {
+  | ^^^^^

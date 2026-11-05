@@ -1,0 +1,5 @@
+error: value must be a literal, path, or parenthesized expression
+ --> tests/ui/fail/pattern_bad_value.rs:5:55
+  |
+5 |     let _ = uarch_macros::pattern!(Unknown { STATE == 1 + 2 });
+  |                                                       ^^^^^

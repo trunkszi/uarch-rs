@@ -1,0 +1,5 @@
+error: first parameter must be arch: A
+ --> tests/ui/fail/multiversion_wrong_first.rs:6:17
+  |
+6 | fn bad<A: Arch>(value: A) {}
+  |                 ^^^^^^^^

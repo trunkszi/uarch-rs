@@ -1,0 +1,5 @@
+error: layout macros require a named-field struct
+ --> tests/ui/fail/register_pass_tuple.rs:5:11
+  |
+5 | struct Bad(u64);
+  |           ^^^^^

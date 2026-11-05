@@ -1,0 +1,73 @@
+error[E0599]: no associated function or constant named `from_raw` found for struct `Word` in the current scope
+ --> tests/ui/fail/pattern_removed_word_aliases.rs:4:19
+  |
+1 | uarch::bitword! { struct Word(u64) { [0] READY, [1..=3] MODE: u8 } }
+  | -------------------------------------------------------------------- associated function or constant `from_raw` not found for this struct
+...
+4 |     let _ = Word::from_raw(0);
+  |                   ^^^^^^^^ associated function or constant not found in `Word`
+  |
+note: if you're trying to build a new `Word`, consider using `Word::new` which returns `Word`
+ --> tests/ui/fail/pattern_removed_word_aliases.rs:1:1
+  |
+1 | uarch::bitword! { struct Word(u64) { [0] READY, [1..=3] MODE: u8 } }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  = help: items from traits can only be used if the trait is implemented and in scope
+  = note: the following trait defines an item `from_raw`, perhaps you need to implement it:
+          candidate #1: `ExitStatusExt`
+  = note: this error originates in the macro `uarch::bitword` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: there is an associated function `from` with a similar name
+  |
+4 -     let _ = Word::from_raw(0);
+4 +     let _ = Word::from(0);
+  |
+
+error[E0599]: no method named `apply` found for struct `Word` in the current scope
+ --> tests/ui/fail/pattern_removed_word_aliases.rs:5:18
+  |
+1 | uarch::bitword! { struct Word(u64) { [0] READY, [1..=3] MODE: u8 } }
+  | -------------------------------------------------------------------- method `apply` not found for this struct
+...
+5 |     let _ = word.apply(Word::MODE.patch(2));
+  |                  ^^^^^ method not found in `Word`
+
+error[E0599]: no method named `all` found for struct `Word` in the current scope
+ --> tests/ui/fail/pattern_removed_word_aliases.rs:6:18
+  |
+1 | uarch::bitword! { struct Word(u64) { [0] READY, [1..=3] MODE: u8 } }
+  | -------------------------------------------------------------------- method `all` not found for this struct
+...
+6 |     let _ = word.all(Word::MODE.eq(3));
+  |                  ^^^ method not found in `Word`
+  |
+  = help: items from traits can only be used if the trait is implemented and in scope
+  = note: the following trait defines an item `all`, perhaps you need to implement it:
+          candidate #1: `Iterator`
+
+error[E0599]: no method named `any` found for struct `Word` in the current scope
+ --> tests/ui/fail/pattern_removed_word_aliases.rs:7:18
+  |
+1 | uarch::bitword! { struct Word(u64) { [0] READY, [1..=3] MODE: u8 } }
+  | -------------------------------------------------------------------- method `any` not found for this struct
+...
+7 |     let _ = word.any(Word::MODE.eq(3));
+  |                  ^^^ method not found in `Word`
+  |
+  = help: items from traits can only be used if the trait is implemented and in scope
+  = note: the following trait defines an item `any`, perhaps you need to implement it:
+          candidate #1: `Iterator`
+
+error[E0599]: no method named `none` found for struct `Word` in the current scope
+ --> tests/ui/fail/pattern_removed_word_aliases.rs:8:18
+  |
+1 | uarch::bitword! { struct Word(u64) { [0] READY, [1..=3] MODE: u8 } }
+  | -------------------------------------------------------------------- method `none` not found for this struct
+...
+8 |     let _ = word.none(Word::MODE.eq(3));
+  |                  ^^^^
+  |
+help: there is a method `ne` with a similar name
+  |
+8 -     let _ = word.none(Word::MODE.eq(3));
+8 +     let _ = word.ne(Word::MODE.eq(3));
+  |

@@ -1,0 +1,5 @@
+error: conditional fields cannot be layout-proven
+ --> tests/ui/fail/register_pass_cfg.rs:6:5
+  |
+6 |     #[cfg(any())]
+  |     ^^^^^^^^^^^^^

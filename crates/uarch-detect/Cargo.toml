@@ -1,0 +1,29 @@
+[package]
+name = "uarch-detect"
+version.workspace = true
+description = "Execution-domain CPU evidence and conservative ISA capability detection."
+autobenches = false
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+uarch-tiers = { workspace = true }
+uarch-arch = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true
+
+[[test]]
+name = "detect_scenario"
+path = "tests/scenario.rs"
+
+[[bench]]
+name = "detect"
+path = "benches/main.rs"
+harness = false

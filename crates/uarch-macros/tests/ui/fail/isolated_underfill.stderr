@@ -1,0 +1,7 @@
+error[E0308]: mismatched types
+ --> tests/ui/fail/isolated_underfill.rs:7:1
+  |
+7 | #[isolated(full, crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected an array with a size of 128, found one with a size of 64
+  |
+  = note: this error originates in the attribute macro `isolated` (in Nightly builds, run with -Z macro-backtrace for more info)

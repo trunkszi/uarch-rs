@@ -1,0 +1,5 @@
+error: expected a single type parameter A: Arch
+ --> tests/ui/fail/multiversion_no_arch.rs:6:1
+  |
+6 | fn bad(arch: u64) {}
+  | ^^^^^^^^^^^^^^^^^

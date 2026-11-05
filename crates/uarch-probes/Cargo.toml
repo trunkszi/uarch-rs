@@ -1,0 +1,20 @@
+[package]
+autobenches = false
+name = "uarch-probes"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+uarch-arch = { workspace = true }
+uarch-macros = { workspace = true }
+uarch-core = { workspace = true }
+uarch-tiers = { workspace = true }
+
+[lints]
+workspace = true
+
+[[bench]]
+name = "main"
+harness = false

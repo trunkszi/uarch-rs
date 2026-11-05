@@ -1,0 +1,5 @@
+error: arch type cannot occur in other parameters or the return type
+ --> tests/ui/fail/multiversion_arch_parameter.rs:6:40
+  |
+6 | fn bad<A: Arch>(arch: A, other: Option<A>) {}
+  |                                        ^

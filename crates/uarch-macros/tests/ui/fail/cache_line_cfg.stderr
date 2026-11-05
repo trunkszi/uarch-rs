@@ -1,0 +1,5 @@
+error: conditional fields cannot be layout-proven
+ --> tests/ui/fail/cache_line_cfg.rs:6:5
+  |
+6 |     #[cfg_attr(all(), allow(dead_code))]
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

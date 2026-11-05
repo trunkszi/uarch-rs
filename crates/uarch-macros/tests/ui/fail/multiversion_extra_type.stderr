@@ -1,0 +1,5 @@
+error: only one Arch type parameter and explicit lifetimes are supported
+ --> tests/ui/fail/multiversion_extra_type.rs:6:17
+  |
+6 | fn bad<A: Arch, B>(arch: A, value: B) {}
+  |                 ^

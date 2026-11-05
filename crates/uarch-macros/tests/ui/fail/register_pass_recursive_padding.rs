@@ -1,0 +1,17 @@
+#![allow(dead_code, unused_imports)]
+use uarch_macros::{cache_line, isolated, register_pass};
+#[path = "support/layout.rs"]
+mod support;
+use support::__private;
+
+#[derive(Clone, Copy)]
+struct Inner {
+    a: u8,
+    b: u64,
+}
+#[register_pass(c_abi, crate = "crate")]
+#[derive(Clone, Copy)]
+struct Bad {
+    value: Inner,
+}
+fn main() {}

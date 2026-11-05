@@ -1,0 +1,5 @@
+error: attribute conflicts with generated multiversion clones
+ --> tests/ui/fail/multiversion_no_mangle.rs:6:1
+  |
+6 | #[unsafe(no_mangle)]
+  | ^^^^^^^^^^^^^^^^^^^^

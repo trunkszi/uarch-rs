@@ -1,0 +1,7 @@
+error: layout macros require a named-field struct
+ --> tests/ui/fail/register_pass_unit.rs:4:1
+  |
+4 | #[register_pass]
+  | ^^^^^^^^^^^^^^^^
+  |
+  = note: this error originates in the attribute macro `register_pass` (in Nightly builds, run with -Z macro-backtrace for more info)

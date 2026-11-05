@@ -1,0 +1,13 @@
+error[E0080]: evaluation panicked: assertion failed: ::core::mem::size_of::<Self>() <= 16 && ::core::mem::align_of::<Self>() <= 8
+ --> tests/ui/fail/register_pass_c_abi_align.rs:7:1
+  |
+7 | #[register_pass(c_abi, crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `<Bad as _::__UarchLayoutProof>::CHECK` failed here
+
+note: erroneous constant encountered
+ --> tests/ui/fail/register_pass_c_abi_align.rs:7:1
+  |
+7 | #[register_pass(c_abi, crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this note originates in the attribute macro `register_pass` (in Nightly builds, run with -Z macro-backtrace for more info)

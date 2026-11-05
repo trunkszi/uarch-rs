@@ -1,0 +1,22 @@
+error[E0080]: evaluation panicked: pattern must be evaluated at compile time
+ --> tests/ui/fail/pattern_const_pattern.rs:6:13
+  |
+6 |     let _ = uarch_macros::pattern!(crate="crate", Word { FIELD == 16 });
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `main::{constant#0}` failed inside this call
+  |
+note: inside `BitPattern::<Word>::and_eq`
+ --> tests/ui/fail/support/const_bridge.rs
+  |
+  |     impl<W> BitPattern<W> {
+...
+  |         pub const fn and_eq(self, _: (), _: u64) -> Self {
+  |             panic!("pattern must be evaluated at compile time")
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the failure occurred here
+
+note: erroneous constant encountered
+ --> tests/ui/fail/pattern_const_pattern.rs:6:13
+  |
+6 |     let _ = uarch_macros::pattern!(crate="crate", Word { FIELD == 16 });
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this note originates in the macro `uarch_macros::pattern` (in Nightly builds, run with -Z macro-backtrace for more info)

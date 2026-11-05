@@ -1,0 +1,5 @@
+error: impl Trait is outside the multiversion signature subset
+ --> tests/ui/fail/multiversion_impl_trait.rs:6:33
+  |
+6 | fn bad<A: Arch>(arch: A, value: impl Copy) {}
+  |                                 ^^^^^^^^^

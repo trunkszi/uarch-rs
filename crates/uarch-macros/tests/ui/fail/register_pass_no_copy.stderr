@@ -1,0 +1,17 @@
+error[E0277]: the trait bound `Bad: Copy` is not satisfied
+ --> tests/ui/fail/register_pass_no_copy.rs:7:1
+  |
+7 | #[register_pass(crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Copy` is not implemented for `Bad`
+  |
+note: required by a bound in `assert_copy`
+ --> tests/ui/fail/support/layout.rs
+  |
+  |     pub const fn assert_copy<T: Copy>() {}
+  |                                 ^^^^ required by this bound in `assert_copy`
+  = note: this error originates in the attribute macro `register_pass` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider annotating `Bad` with `#[derive(Copy)]`
+  |
+8 + #[derive(Copy)]
+9 | struct Bad {
+  |

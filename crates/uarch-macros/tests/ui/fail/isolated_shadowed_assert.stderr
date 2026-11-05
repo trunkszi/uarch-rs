@@ -1,0 +1,13 @@
+error[E0080]: evaluation panicked: assertion failed: ::core::mem::offset_of!(Self, second) == 0usize + ::core::mem::size_of::<u8>()
+  --> tests/ui/fail/isolated_shadowed_assert.rs:11:1
+   |
+11 | #[isolated(full, crate = "crate")]
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `<Bad as _::__UarchLayoutProof>::CHECK` failed here
+
+note: erroneous constant encountered
+  --> tests/ui/fail/isolated_shadowed_assert.rs:11:1
+   |
+11 | #[isolated(full, crate = "crate")]
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: this note originates in the attribute macro `isolated` (in Nightly builds, run with -Z macro-backtrace for more info)

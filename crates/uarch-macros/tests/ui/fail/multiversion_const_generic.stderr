@@ -1,0 +1,5 @@
+error: only one Arch type parameter and explicit lifetimes are supported
+ --> tests/ui/fail/multiversion_const_generic.rs:6:17
+  |
+6 | fn bad<A: Arch, const N: usize>(arch: A) {}
+  |                 ^^^^^^^^^^^^^^
