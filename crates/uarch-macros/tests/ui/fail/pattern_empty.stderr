@@ -1,0 +1,7 @@
+error: expected at least one bit expression
+ --> tests/ui/fail/pattern_empty.rs:5:13
+  |
+5 |     let _ = uarch_macros::pattern!(Unknown {});
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this error originates in the macro `uarch_macros::pattern` (in Nightly builds, run with -Z macro-backtrace for more info)

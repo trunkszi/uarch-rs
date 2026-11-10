@@ -1,0 +1,7 @@
+error[E0308]: mismatched types
+ --> tests/ui/fail/cache_line_underfill.rs:7:1
+  |
+7 | #[cache_line(crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected an array with a size of 64, found one with a size of 8
+  |
+  = note: this error originates in the attribute macro `cache_line` (in Nightly builds, run with -Z macro-backtrace for more info)

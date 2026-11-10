@@ -1,0 +1,22 @@
+[package]
+autobenches = false
+name = "uarch-core"
+version.workspace = true
+description = "Runtime-free layout proofs, bit algebra, dataflow and invariant arithmetic."
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+thiserror = { workspace = true }
+
+[lints]
+workspace = true
+
+[[bench]]
+name = "main"
+harness = false

@@ -1,0 +1,5 @@
+error: unknown macro option
+ --> tests/ui/fail/register_pass_unknown_option.rs:7:17
+  |
+7 | #[register_pass(unknown)]
+  |                 ^^^^^^^

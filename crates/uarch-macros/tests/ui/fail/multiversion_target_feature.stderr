@@ -1,0 +1,5 @@
+error: attribute conflicts with generated multiversion clones
+ --> tests/ui/fail/multiversion_target_feature.rs:6:1
+  |
+6 | #[target_feature(enable = "sse2")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

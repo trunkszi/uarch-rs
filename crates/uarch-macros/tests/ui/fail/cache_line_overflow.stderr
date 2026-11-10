@@ -1,0 +1,5 @@
+error: lines must be positive and 64 * lines must fit usize
+ --> tests/ui/fail/cache_line_overflow.rs:4:22
+  |
+4 | #[cache_line(lines = 18446744073709551615)]
+  |                      ^^^^^^^^^^^^^^^^^^^^

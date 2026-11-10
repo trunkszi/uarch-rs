@@ -1,0 +1,13 @@
+error[E0080]: evaluation panicked: assertion failed: ::core::mem::align_of::<Self>() == 128
+  --> tests/ui/fail/isolated_alignment.rs:11:1
+   |
+11 | #[isolated(crate = "crate")]
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `<Bad as _::__UarchLayoutProof>::CHECK::{constant#0}` failed here
+
+note: erroneous constant encountered
+  --> tests/ui/fail/isolated_alignment.rs:11:1
+   |
+11 | #[isolated(crate = "crate")]
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: this note originates in the attribute macro `isolated` (in Nightly builds, run with -Z macro-backtrace for more info)

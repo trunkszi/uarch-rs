@@ -1,0 +1,5 @@
+error: expected a term after &
+ --> tests/ui/fail/pattern_trailing_term.rs:5:52
+  |
+5 |     let _ = uarch_macros::pattern!(Unknown { READY & });
+  |                                                    ^

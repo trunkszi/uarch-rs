@@ -1,0 +1,18 @@
+error[E0080]: evaluation panicked: assertion failed: ::core::mem::size_of::<Self>() <= 8 ||
+                  (::core::mem::size_of::<Self>() <= 16 &&
+                          (0usize + <u64 as crate::__private::RegisterLeaf>::LEAVES as usize
+                                          + <u64 as crate::__private::RegisterLeaf>::LEAVES as usize +
+                                      <u64 as crate::__private::RegisterLeaf>::LEAVES as usize) ==
+                              2)
+ --> tests/ui/fail/register_pass_large.rs:7:1
+  |
+7 | #[register_pass(crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `<Bad as _::__UarchLayoutProof>::CHECK` failed here
+
+note: erroneous constant encountered
+ --> tests/ui/fail/register_pass_large.rs:7:1
+  |
+7 | #[register_pass(crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this note originates in the attribute macro `register_pass` (in Nightly builds, run with -Z macro-backtrace for more info)

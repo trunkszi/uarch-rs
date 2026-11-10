@@ -1,0 +1,26 @@
+[package]
+autobenches = false
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+uarch-audit = { workspace = true }
+uarch = { workspace = true }
+mimalloc = { workspace = true }
+syn = { workspace = true }
+proc-macro2 = { workspace = true }
+clap = { workspace = true }
+sonic-rs = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+uarch-probes = { workspace = true }
+
+[lints]
+workspace = true
+
+[[bench]]
+name = "main"
+harness = false

@@ -1,0 +1,28 @@
+error[E0277]: the trait bound `[u8; 8]: RegisterLeaf` is not satisfied
+  --> tests/ui/fail/register_pass_array.rs:10:12
+   |
+10 |     value: [u8; 8],
+   |            ^^^^^^^ the trait `RegisterLeaf` is not implemented for `[u8; 8]`
+   |
+  ::: tests/ui/fail/support/layout.rs
+   |
+   |     macro_rules! scalar {
+   |
+help: the following other types implement trait `RegisterLeaf`
+  --> tests/ui/fail/support/layout.rs
+   |
+   |             unsafe impl RegisterLeaf for $ty { const LEAVES: u8 = 1; }
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |             |
+   |             `u16`
+   |             `u32`
+   |             `u64`
+   |             `u8`
+...
+   |     scalar!(u8, u16, u32, u64);
+   |     -------------------------- in this macro invocation
+note: required by a bound in `assert_register_leaf`
+  --> tests/ui/fail/support/layout.rs
+   |
+   |     pub const fn assert_register_leaf<T: RegisterLeaf>() {}
+   |                                          ^^^^^^^^^^^^ required by this bound in `assert_register_leaf`

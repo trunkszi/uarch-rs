@@ -1,0 +1,21 @@
+# Build & coverage artifacts
+/target/
+*.profraw
+*.profdata
+
+# IDE & local caches
+.idea/
+.vscode/
+.cache/
+
+# Local design scratchpad (never tracked in git)
+.scratch/
+
+# Agent files and local overrides (never tracked in git)
+.agents/
+.claude/
+.codex/
+AGENTS.md
+CLAUDE.md
+AGENTS.local.md
+CLAUDE.local.md

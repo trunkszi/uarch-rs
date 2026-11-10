@@ -1,0 +1,31 @@
+error[E0277]: the trait bound `Inner: NoPadding` is not satisfied
+  --> tests/ui/fail/cache_line_recursive_padding.rs:12:12
+   |
+12 |     value: [Inner; 8],
+   |            ^^^^^^^^^^ unsatisfied trait bound
+   |
+help: the trait `NoPadding` is not implemented for `Inner`
+  --> tests/ui/fail/cache_line_recursive_padding.rs:7:1
+   |
+ 7 | struct Inner {
+   | ^^^^^^^^^^^^
+   = help: the following other types implement trait `NoPadding`:
+             Bad
+             [T; N]
+             u128
+             u16
+             u32
+             u64
+             u8
+note: required for `[Inner; 8]` to implement `NoPadding`
+  --> tests/ui/fail/support/layout.rs
+   |
+   |     unsafe impl<T: NoPadding, const N: usize> NoPadding for [T; N] {}
+   |                    ---------                  ^^^^^^^^^     ^^^^^^
+   |                    |
+   |                    unsatisfied trait bound introduced here
+note: required by a bound in `assert_no_padding`
+  --> tests/ui/fail/support/layout.rs
+   |
+   |     pub const fn assert_no_padding<T: NoPadding>() {}
+   |                                       ^^^^^^^^^ required by this bound in `assert_no_padding`

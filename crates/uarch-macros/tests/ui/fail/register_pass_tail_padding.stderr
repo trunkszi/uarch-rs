@@ -1,0 +1,7 @@
+error[E0308]: mismatched types
+ --> tests/ui/fail/register_pass_tail_padding.rs:7:1
+  |
+7 | #[register_pass(c_abi, crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected an array with a size of 9, found one with a size of 16
+  |
+  = note: this error originates in the attribute macro `register_pass` (in Nightly builds, run with -Z macro-backtrace for more info)

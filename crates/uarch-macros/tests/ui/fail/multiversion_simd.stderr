@@ -1,0 +1,5 @@
+error: by-value SIMD is outside the multiversion signature subset
+ --> tests/ui/fail/multiversion_simd.rs:6:33
+  |
+6 | fn bad<A: Arch>(arch: A, value: core::arch::x86_64::__m128i) {}
+  |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

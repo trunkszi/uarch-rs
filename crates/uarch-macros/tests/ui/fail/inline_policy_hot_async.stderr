@@ -1,0 +1,5 @@
+error: inline policies require a synchronous function; cold_sink also requires Rust ABI
+ --> tests/ui/fail/inline_policy_hot_async.rs:4:1
+  |
+4 | async fn bad() {}
+  | ^^^^^^^^^^^^^^

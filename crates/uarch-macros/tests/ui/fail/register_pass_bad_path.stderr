@@ -1,0 +1,5 @@
+error: unexpected end of input, expected identifier
+ --> tests/ui/fail/register_pass_bad_path.rs:7:25
+  |
+7 | #[register_pass(crate = "::")]
+  |                         ^^^^

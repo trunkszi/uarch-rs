@@ -1,0 +1,32 @@
+[package]
+autobenches = false
+name = "uarch"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+description = "Facade for microarchitecture layout, bit algebra, arch tokens, and host detect."
+
+[features]
+default = ["std", "detect"]
+std = []
+detect = ["dep:uarch-detect", "std"]
+
+[dependencies]
+uarch-arch = { workspace = true }
+uarch-core = { workspace = true }
+uarch-detect = { workspace = true, optional = true }
+uarch-macros = { workspace = true }
+uarch-tiers = { workspace = true }
+
+[lints]
+workspace = true
+
+[[bench]]
+name = "main"
+path = "benches/main.rs"
+harness = false

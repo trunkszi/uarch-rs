@@ -1,0 +1,73 @@
+[workspace]
+members = ["crates/uarch-tiers", "crates/uarch-core", "crates/uarch-arch", "crates/uarch-detect", "crates/uarch-macros", "crates/uarch", "crates/uarch-probes", "crates/uarch-audit", "xtask"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95.0"
+license = "MIT"
+repository = "https://github.com/trunkszi/uarch-rs"
+readme = "README.md"
+keywords = ["microarchitecture", "simd", "cache", "bitfield", "no-std"]
+categories = ["no-std", "hardware-support", "concurrency", "data-structures"]
+
+[workspace.dependencies]
+toml = { version = "1", default-features = false, features = ["parse", "serde"] }
+uarch-audit = { version = "0.1.0", path = "crates/uarch-audit", default-features = false }
+uarch = { version = "0.1.0", path = "crates/uarch", default-features = false }
+mimalloc = { version = "0.1", default-features = false }
+uarch-arch = { version = "0.1.0", path = "crates/uarch-arch", default-features = false }
+uarch-detect = { version = "0.1.0", path = "crates/uarch-detect", default-features = false }
+uarch-macros = { version = "0.1.0", path = "crates/uarch-macros", default-features = false }
+proc-macro2 = { version = "1", default-features = false, features = ["proc-macro"] }
+quote = { version = "1", default-features = false, features = ["proc-macro"] }
+syn = { version = "2", default-features = false, features = ["full", "parsing", "printing", "proc-macro", "clone-impls", "visit"] }
+trybuild = { version = "1", default-features = false }
+thiserror = { version = "2", default-features = false }
+clap = { version = "4", default-features = false, features = ["std", "derive", "help", "usage", "error-context"] }
+sonic-rs = { version = "0.5", default-features = false }
+serde = { version = "1", default-features = false, features = ["derive", "std"] }
+uarch-tiers = { version = "0.1.0", path = "crates/uarch-tiers", default-features = false }
+uarch-core = { version = "0.1.0", path = "crates/uarch-core", default-features = false }
+uarch-probes = { version = "0.1.0", path = "crates/uarch-probes", default-features = false }
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+dead_code = "deny"
+unreachable_pub = "deny"
+unexpected_cfgs = { level = "deny", check-cfg = ['cfg(uarch_mca)'] }
+
+[workspace.lints.clippy]
+undocumented_unsafe_blocks = "deny"
+missing_safety_doc = "deny"
+clone_on_copy = "deny"
+redundant_clone = "deny"
+expl_impl_clone_on_copy = "deny"
+non_canonical_clone_impl = "deny"
+unwrap_used = "deny"
+expect_used = "deny"
+todo = "deny"
+unimplemented = "deny"
+missing_errors_doc = "deny"
+missing_panics_doc = "deny"
+large_types_passed_by_value = "deny"
+
+[profile.dev]
+debug = false
+strip = "debuginfo"
+incremental = false
+
+[profile.test]
+debug = false
+strip = "debuginfo"
+incremental = false
+
+[profile.release]
+lto = "thin"
+panic = "abort"
+
+[profile.bench]
+lto = "thin"
+debug = "full"
+strip = "none"

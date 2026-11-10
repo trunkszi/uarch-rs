@@ -1,0 +1,5 @@
+error: layout macros reject generics and lifetimes
+ --> tests/ui/fail/register_pass_generic.rs:5:11
+  |
+5 | struct Bad<T> {
+  |           ^^^

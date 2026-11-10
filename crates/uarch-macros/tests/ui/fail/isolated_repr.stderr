@@ -1,0 +1,5 @@
+error: layout macros supply repr; remove the user repr
+ --> tests/ui/fail/isolated_repr.rs:5:1
+  |
+5 | #[repr(C)]
+  | ^^^^^^^^^^

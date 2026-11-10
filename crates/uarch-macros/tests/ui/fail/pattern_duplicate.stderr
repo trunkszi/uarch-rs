@@ -1,0 +1,5 @@
+error: duplicate patch identifier
+ --> tests/ui/fail/pattern_duplicate.rs:7:9
+  |
+7 |         READY: false
+  |         ^^^^^

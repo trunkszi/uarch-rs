@@ -1,0 +1,5 @@
+error: unsupported macro mode
+ --> tests/ui/fail/register_pass_option.rs:4:17
+  |
+4 | #[register_pass(full)]
+  |                 ^^^^

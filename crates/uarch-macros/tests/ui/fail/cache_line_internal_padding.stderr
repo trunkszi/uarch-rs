@@ -1,0 +1,14 @@
+error[E0080]: evaluation panicked: assertion failed: ::core::mem::size_of::<Self>() == 64usize * 1usize &&
+                  ::core::mem::align_of::<Self>() == 64
+ --> tests/ui/fail/cache_line_internal_padding.rs:7:1
+  |
+7 | #[cache_line(crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluation of `<Bad as _::__UarchLayoutProof>::CHECK::{constant#3}` failed here
+
+note: erroneous constant encountered
+ --> tests/ui/fail/cache_line_internal_padding.rs:7:1
+  |
+7 | #[cache_line(crate = "crate")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this note originates in the attribute macro `cache_line` (in Nightly builds, run with -Z macro-backtrace for more info)

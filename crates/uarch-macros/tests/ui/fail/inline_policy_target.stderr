@@ -1,0 +1,5 @@
+error: conflicting inline policy attribute
+ --> tests/ui/fail/inline_policy_target.rs:5:1
+  |
+5 | #[target_feature(enable = "sse2")]
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

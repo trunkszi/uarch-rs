@@ -1,0 +1,5 @@
+error: first parameter must be arch: A on a free function
+ --> tests/ui/fail/multiversion_self.rs:6:1
+  |
+6 | fn bad<A: Arch>(&self, arch: A) {}
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

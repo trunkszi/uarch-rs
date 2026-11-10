@@ -1,0 +1,5 @@
+error: expected identifier
+ --> tests/ui/fail/pattern_comma.rs:5:55
+  |
+5 |     let _ = uarch_macros::patch!(Unknown { READY:true,, });
+  |                                                       ^

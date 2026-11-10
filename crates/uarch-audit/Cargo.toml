@@ -1,0 +1,16 @@
+[package]
+name = "uarch-audit"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+uarch = { workspace = true }
+syn = { workspace = true }
+sonic-rs = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+toml = { workspace = true }
+
+[lints]
+workspace = true
